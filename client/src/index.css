@@ -6,3 +6,13 @@ h1 {
 body {
   background-color: black;
 }
+
+.canvas {
+  margin: auto;
+  width: 50%;
+}
+
+button {
+  margin:0 auto;
+  display:block;
+}

@@ -1,14 +1,38 @@
 import CanvasDraw from 'react-canvas-draw'
+import {useState} from 'react'
+import axios from 'axios'
+
+function sendData(data) {
+  console.log(data);
+  axios.get('https://localhost:8000')
+      .then(res => {
+        console.log(res);
+        return res;
+      })
+}
 
 function App() {
+
+  const [color, setColor] = useState('black')
+  const [saveableCanvas, setsaveableCanvas] = useState(null)
+
   return (
     <div className="container">
         <h1>
           Welcome to Quick Draw!
         </h1>
-        <CanvasDraw style={{
-          position: 'absolute', left: '50%', top: '50%',
-          transform: 'translate(-50%, -50%)'}}/>
+        <CanvasDraw 
+          className='canvas'
+          ref={canvasDraw => setsaveableCanvas(canvasDraw)}
+          onChange={() => setColor("#" + Math.floor(Math.random() * 16777215).toString(16))}
+          brushColor={color}
+          hideGrid={true}
+          brushRadius={2}
+          lazyRadius={0}
+        />
+        <button onClick={() => sendData(saveableCanvas.getSaveData())}>Predict Doodle</button>
+        <button onClick={() => saveableCanvas.clear()}>Clear</button>
+        {/* <li></li> */}
     </div>
   );
 }
