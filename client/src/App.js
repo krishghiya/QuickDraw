@@ -30,9 +30,10 @@ function App() {
           brushRadius={2}
           lazyRadius={0}
         />
-        <button onClick={() => sendData(saveableCanvas.getSaveData())}>Predict Doodle</button>
-        <button onClick={() => saveableCanvas.clear()}>Clear</button>
-        {/* <li></li> */}
+        <div className='button'>
+          <button onClick={() => sendData(saveableCanvas.getSaveData())}>Predict Doodle</button>
+          <button onClick={() => saveableCanvas.clear()}>Clear Screen</button>
+        </div>
     </div>
   );
 }

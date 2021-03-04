@@ -12,7 +12,10 @@ body {
   width: 50%;
 }
 
-button {
-  margin:0 auto;
-  display:block;
+.button {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px 0;
 }
