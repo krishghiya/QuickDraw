@@ -3,12 +3,12 @@ import {useState} from 'react'
 import axios from 'axios'
 
 function sendData(data) {
-  console.log(data);
-  axios.get('https://localhost:8000')
-      .then(res => {
-        console.log(res);
-        return res;
-      })
+  axios.post('http://localhost:8000/data', {
+    lines: data
+  }).then(res => {
+    console.log(res);
+    return res;
+  })
 }
 
 function App() {
