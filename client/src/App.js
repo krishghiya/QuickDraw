@@ -3,8 +3,12 @@ import {useState} from 'react'
 import axios from 'axios'
 
 function sendData(data) {
-  axios.post('http://localhost:8000/data', {
+  axios.post('http://localhost:8000/data/', {
     lines: data
+  }, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
   }).then(res => {
     console.log(res);
     return res;
