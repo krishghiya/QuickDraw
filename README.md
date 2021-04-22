@@ -6,3 +6,7 @@ To run, open a terminal, navigate to the project directory, and run the followin
 `cd client`<br>
 `npm i`<br>
 `npm start`<br>
+
+Alternatively, you can explore model.ipynb in /model to discover how the model was trained and look at sample predictions<br>
+
+Have fun!<br>
